@@ -1,4 +1,4 @@
-/**
+/*
  * Bei Programmen kann es immer zu Fehlern kommen. Einerseits durch logische Denkfehler (z.B. Array-Index wird zu groß), andererseits
  * durch äußere Ereignisse auf die man keinen Einfluss hat (Usereingaben, Netzwerkfehler, kein Speicherplatz...).
  * <p>
@@ -20,7 +20,7 @@
  * Fehler auftreten können (Logikfehler, äußere Ereignisse wie Benutzereingaben) und wir diese behandeln wollen. In den Beispielen wissen wir
  * ja bereits beim Programmieren, dass diese Fehler auftreten - in diesen Fällen würden wir natürlich den Code korrigieren, damit die Fehler
  * nicht auftreten.
- **/
+ */
 
 
 class Main {

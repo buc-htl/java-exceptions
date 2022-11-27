@@ -6,24 +6,30 @@ public class UnderstandExceptions1 {
         int[] a = new int[3];
 
       /*
-      Eine Exception, der wir wohl alle schon begegnet sind, ist die ArrayIndexOutOfBoundsException (siehe https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IndexOutOfBoundsException.html). Wie in der Dokumentation ersichtlich leitet sie von RuntimeException ab, sie muss also nicht behandelt werden. Tritt sie auf wird unser Programm sofort beendet und die Exception inkl. Stacktrace ausgegeben. 
+      Eine Exception, der wir wohl alle schon begegnet sind, ist die ArrayIndexOutOfBoundsException
+      (siehe https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IndexOutOfBoundsException.html).
+      Wie in der Dokumentation ersichtlich leitet sie von RuntimeException ab, sie muss also nicht behandelt werden.
+      Tritt sie auf, wird unser Programm sofort beendet und die Exception inkl. Stacktrace ausgegeben.
       */
+
         //a[4]=8;   //entferne die Kommentare um es auszuprobieren
 
       /*
-      Ein weiteres Beispiel für eine RuntimeException wäre NumberFormatException (siehe https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NumberFormatException.html)
+      Ein weiteres Beispiel für eine RuntimeException wäre NumberFormatException
+      (siehe https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NumberFormatException.html)
       */
-        //int zahl = Integer.parseInt("fd4"); //entferne die Kommentare um es auszuprobieren
+
+        //int zahl = Integer.parseInt("fd4"); //entferne die Kommentare, um es auszuprobieren
 
 
-        /**
+        /*
          Wollen wir eine Exception nun aktiv behandeln, ist die erste Möglichkeit den Code mit einem try-catch zu umschließen.
          - Der Programmablauf wird sofort unterbrochen, wenn eine Exception auftritt
          - Es wird der nächste passende catch-Block gesucht.
          - Die Programmausführung setzt in diesem catch-Block fort.
          - Nachdem der catch Block abgearbeitet wurde, läuft das Programm einfach weiter.
          - Wird kein passender catch-Block gefunden, wird das Programm (so wie bisher) abgebrochen.
-         **/
+         */
         try {
             a[0] = 5;
             System.out.println("Innerhalb von try-catch kann beliebiger Code stehen.");
@@ -34,9 +40,9 @@ public class UnderstandExceptions1 {
         }
         System.out.println("Programm läuft weiter, obwohl eine Exception aufgetreten ist. Yippieh.");
 
-        /**
+        /*
          Ein try-catch  kann mehrere catch Blöcke haben. Bei der ersten Exception wird der try Block sofort beendet und der restliche Code nicht mehr ausgeführt.
-         **/
+         */
         try {
             a[0] = 5;
             System.out.println("Innerhalb von try-catch kann beliebiger Code stehen.");
@@ -64,7 +70,8 @@ public class UnderstandExceptions1 {
 /*
 Die Reihenfolge der catch-Blöcke ist wichtig! 
 
-Der untenstehende Code ist nicht gültig, weil der catch-Block für ArrayIndexOutOfBoundsException nie erreicht werden kann. Der allgemeinere catch-Block für Exception fängt auch bereits eine ArrayIndexOutOfBoundsException ab.
+Der untenstehende Code ist nicht gültig, weil der catch-Block für ArrayIndexOutOfBoundsException nie erreicht werden kann.
+Der allgemeinere catch-Block für Exception fängt auch bereits eine ArrayIndexOutOfBoundsException ab.
 */
 /*
  try {
@@ -76,13 +83,13 @@ Der untenstehende Code ist nicht gültig, weil der catch-Block für ArrayIndexOu
     }
 */
 
-/**
+/*
  Neben try und catch kann auch ein finally-Block angegeben werden. Der finally-Block wird IMMER ausgeführt.
  Er wird ausgeführt wenn innerhalb vom try Block keine Exception auftritt.
  Er wird ausgeführt nach einem catch-Block.
 
  Dient meist zum "Aufräumen".....
- **/
+ */
         try {
             a[0] = 5;
             int zahl = Integer.parseInt("4");
